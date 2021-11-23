@@ -1,10 +1,18 @@
+import { Route } from "wouter";
 import CharacterLists from "./Pages/CharacterLists";
 import "./App.css";
+import Character from "./Pages/Character";
 
 function App() {
   return (
     <div className="App">
-      <CharacterLists />
+      <Route path="/">
+        <CharacterLists />
+      </Route>
+
+      <Route path="/:id">
+        <Character />
+      </Route>
     </div>
   );
 }

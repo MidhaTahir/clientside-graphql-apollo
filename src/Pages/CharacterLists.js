@@ -1,4 +1,4 @@
-import { useQuery, gql } from "@apollo/client";
+import { Link } from "wouter";
 import { useCharacters } from "../hooks/useCharacters";
 
 const CharacterLists = () => {
@@ -11,11 +11,11 @@ const CharacterLists = () => {
   return (
     <div className="CharacterList">
       {data.characters.results.map((character) => (
-        <div>
+        <Link to={`/${character.id}`}>
           {/* <p>{JSON.stringify(character, null, 2)}</p> */}
           <img src={character.image} alt="character" />
           <h1>{character.name}</h1>
-        </div>
+        </Link>
       ))}
     </div>
   );
